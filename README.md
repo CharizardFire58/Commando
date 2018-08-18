@@ -1,50 +1,27 @@
-# Commando
-> Commando Discord bot built on discord.js-commando.
+Welcome to Glitch
+=================
 
-## Contributing
+Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+
+Find out more [about Glitch](https://glitch.com/about).
 
 
-## Run it yourself
+Your Project
+------------
 
-## Installation guide for Ubuntu 16.04.2 LTS
+On the front-end,
+- edit `public/client.js`, `public/style.css` and `views/index.html`
+- drag in `assets`, like images or music, to add them to your project
 
-#### Install Docker
+On the back-end,
+- your app starts at `server.js`
+- add frameworks and packages in `package.json`
+- safely store app secrets in `.env` (nobody can see this but you and people you invite)
 
-```bash
-sudo apt-get update
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
-sudo apt-get update
-sudo apt-get install -y docker-engine
-```
 
-#### Install docker-compose
-```bash
-sudo pip install docker-compose
-```
+Made by [Fog Creek](https://fogcreek.com/)
+-------------------
 
-#### Get ready
-```bash
-wget https://raw.githubusercontent.com/WeebDev/Commando/master/docker-compose.yml.example -O docker-compose.yml
-```
-
-***Fill out all the needed ENV variables.***
-
-#### Launch docker-compose
-
-```bash
-docker-compose up -d
-```
-
-## Author
-
-**Commando** © [WeebDev](https://github.com/WeebDev), Released under the [MIT](https://github.com/WeebDev/Commando/blob/master/LICENSE) License.<br>
-Authored and maintained by WeebDev.
-
-> GitHub [@WeebDev](https://github.com/WeebDev)
+\ ゜o゜)ノ

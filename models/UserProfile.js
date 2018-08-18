@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const Database = require('../structures/PostgreSQL');
+const Database = require('../estructuras/PostgreSQL');
 
 const UserProfile = Database.db.define('userProfiles', {
 	userID: Sequelize.STRING,
