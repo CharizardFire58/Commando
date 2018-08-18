@@ -7,7 +7,7 @@ const { REDIS } = process.env;
 promisifyAll(redisClient.RedisClient.prototype);
 promisifyAll(redisClient.Multi.prototype);
 
-const redis = redisClient.createClient({user: "ChariZard", password: "rm4uqrPtTT2ZRaQJ51ZLsLnwi8WfwVDL", host: "redis-17317.c44.us-east-1-2.ec2.cloud.redislabs.com", port: 17317 });
+const redis = redisClient.createClient({user: "ChariZard", password: "uOAdBZurlrudJtAHtTcWSJfYp4OCRfYL", host: "redis-17159.c9.us-east-1-2.ec2.cloud.redislabs.com", port: 17159 });
 
 class Redis {
 	static get db() {
