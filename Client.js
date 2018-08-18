@@ -1,7 +1,15 @@
 const commando = require('discord.js-commando');
-const client = new commando.Client()
+const CommandoClient = require('./estructuras/CommandoClient');
+const client = new CommandoClient({
+	owner: '304354101523906561',
+	commandPrefix: "p.",
+	unknownCommandResponse: false,
+	disableEveryone: true
+});
 
 client.registry.registerGroup('games', 'games')
+client.registry.registerGroup('economy', 'economy')
+client.registry.registerGroup('item', 'item')
 client.registry.registerDefaults()
 client.registry.registerCommandsIn(__dirname + "/comandos")
 
