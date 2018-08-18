@@ -54,7 +54,7 @@ module.exports = class ProfileCommand extends Command {
 		Canvas.registerFont(path.join(__dirname, '..', '..', 'assets', 'profile', 'fonts', 'Roboto.ttf'), { family: 'Roboto' }); // eslint-disable-line max-len
 		Canvas.registerFont(path.join(__dirname, '..', '..', 'assets', 'profile', 'fonts', 'NotoEmoji-Regular.ttf'), { family: 'Roboto' }); // eslint-disable-line max-len
 
-		const canvas = new Canvas(300, 300);
+		const canvas = Canvas.createCanvas(300, 300);
 		const ctx = canvas.getContext('2d');
 		const lines = await this._wrapText(ctx, personalMessage, 110);
 		const base = new Image();
