@@ -155,7 +155,7 @@ module.exports = class ProfileCommand extends Command {
 		};
 		base.src = await fs.readFileAsync(path.join(__dirname, '..', '..', 'assets', 'profile', 'backgrounds', `${profile ? profile.background : 'default'}.png`)); // eslint-disable-line max-len
 		cond.src = await request({
-			uri: msg.author.displayAvatarURL({ format: 'png' }),
+			uri: msg.author.displayAvatarURL,
 			encoding: null
 		});
 		generate();
