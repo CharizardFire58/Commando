@@ -19,7 +19,7 @@
     "pg": "^7.4.3",
     "moment": "^2.22.2",
     "moment-duration-format": "^2.2.2",
-    "canvas": "^1.6.11",
+    "canvas": "next",
     "request-promise": "^4.2.2"
   },
   "engines": {
