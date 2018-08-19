@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando');
 const { stripIndents } = require('common-tags');
 
-const Currency = require('../../structures/currency/Currency');
+const Currency = require('../../estructuras/dinero/Currency');
 
 module.exports = class UnlockAllCommand extends Command {
 	constructor(client) {
