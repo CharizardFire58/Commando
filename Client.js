@@ -18,6 +18,9 @@ const Currency = require('./estructuras/dinero/Currency');
 const Experience = require('./estructuras/dinero/Experience');
 const userName = require('./models/UserName');
 
+const SequelizeProvider = require('./providers/Sequelize');
+client.setProvider(new SequelizeProvider(client.database));
+
 let earnedRecently = [];
 let gainedXPRecently = [];
 
