@@ -5,6 +5,12 @@ const moment = require('moment');
 const Bank = require('../../estructuras/dinero/Bank');
 const Currency = require('../../estructuras/dinero/Currency');
 
+//addon
+var momentDurationFormatSetup = require("moment-duration-format");
+momentDurationFormatSetup(moment);
+typeof moment.duration.format === "function";
+//addon
+
 module.exports = class BankInfoCommand extends Command {
 	constructor(client) {
 		super(client, {
@@ -29,7 +35,7 @@ module.exports = class BankInfoCommand extends Command {
 		return msg.reply(stripIndents`
 			the bank currently has ${Currency.convert(balance)}.
 			The current interest rate is ${(interestRate * 100).toFixed(3)}%.
-			Interest will be applied in ${moment.duration(nextUpdate).format('hh [hours] mm [minutes]')}.
+			Interest will be applied in ${moment.duration(nextUpdate).format('hh:mm')}.
 		`);
 	}
 };
