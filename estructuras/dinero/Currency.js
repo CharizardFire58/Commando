@@ -77,19 +77,19 @@ class Currency {
 	}
 
 	static get singular() {
-		return '🧀';
+		return '<:coin:468126478522122263>';
 	}
 
 	static get plural() {
-		return '🧀';
+		return '<:coin:468126478522122263>';
 	}
 
 	static get textSingular() {
-		return 'cheese';
+		return 'coin';
 	}
 
 	static get textPlural() {
-		return 'cheese';
+		return 'coins';
 	}
 }
 
