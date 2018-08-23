@@ -11,6 +11,7 @@ client.registry.registerGroup('games', 'games')
 client.registry.registerGroup('economy', 'economy')
 client.registry.registerGroup('item', 'item')
 client.registry.registerGroup('usuario', 'usuario')
+client.registry.registerGroup('music', 'music')
 client.registry.registerDefaults()
 client.registry.registerCommandsIn(__dirname + "/comandos")
 
