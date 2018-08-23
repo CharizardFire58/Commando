@@ -1,7 +1,7 @@
 const { Command } = require('discord.js-commando');
 const yt = require('ytdl-core')
 
-let queue = {};
+let queue = require('./queue.json');
 
 module.exports = class MusicPlayCommand extends Command {
 	constructor(client) {
