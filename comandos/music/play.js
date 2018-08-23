@@ -21,7 +21,6 @@ module.exports = class MusicPlayCommand extends Command {
 
 	async run(msg) {
         if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with ${'p.'}add`);
-		if (!msg.guild.voiceConnection) return commands.join(msg).then(() => commands.play(msg));
 		if (queue[msg.guild.id].playing) return msg.channel.sendMessage('Already Playing');
 		let dispatcher;
 		queue[msg.guild.id].playing = true;
