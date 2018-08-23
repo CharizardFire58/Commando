@@ -4,9 +4,9 @@ const yt = require('ytdl-core')
 module.exports = class MusicPlayCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'add',
+			name: 'queue',
 			group: 'music',
-			memberName: 'add',
+			memberName: 'queue',
 			description: `add a song`,
 			details: `add a song`,
 			guildOnly: true,
