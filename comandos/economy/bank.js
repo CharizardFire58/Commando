@@ -14,11 +14,11 @@ typeof moment.duration.format === "function";
 module.exports = class BankInfoCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'bank',
+			name: 'banco',
 			group: 'economy',
 			memberName: 'bank',
-			description: `Displays info about the bank.`,
-			details: `Displays the balance and interest rate of the bank.`,
+			description: `Muestra la informacion del banco`,
+			details: `Muestra el dinero y el interés del bando`,
 			guildOnly: true,
 			throttling: {
 				usages: 2,
@@ -33,9 +33,9 @@ module.exports = class BankInfoCommand extends Command {
 		const nextUpdate = await Bank.nextUpdate();
 
 		return msg.reply(stripIndents`
-			the bank currently has ${Currency.convert(balance)}.
-			The current interest rate is ${(interestRate * 100).toFixed(3)}%.
-			Interest will be applied in ${moment.duration(nextUpdate).format('hh [hours] mm [minutes]')}.
+			El banco actualmente tiene ${Currency.convert(balance)}.
+			El interés esta al ${(interestRate * 100).toFixed(3)}%.
+			Se aplicará el interés en ${moment.duration(nextUpdate).format('hh [hours] mm [minutes]')}.
 		`);
 	}
 };
