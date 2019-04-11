@@ -77,19 +77,19 @@ class Currency {
 	}
 
 	static get singular() {
-		return '<:coin:468126478522122263>';
+		return '<:esmeralda:549094302547050496>';
 	}
 
 	static get plural() {
-		return '<:coin:468126478522122263>';
+		return '<:esmeralda:549094302547050496>';
 	}
 
 	static get textSingular() {
-		return 'coin';
+		return 'Esmeralda';
 	}
 
 	static get textPlural() {
-		return 'coins';
+		return 'Esmeraldas';
 	}
 }
 
