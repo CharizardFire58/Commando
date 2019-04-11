@@ -49,9 +49,9 @@ module.exports = class MoneyInfoCommand extends Command {
 			if (money === null) return msg.reply(`todavia no has ganado ${Currency.textPlural}.`);
 			let embed = new Discord.RichEmbed()
                         .setAuthor(msg.author.username, msg.author.displayAvatarURL)
-                        .addField("Inventario", Currency.convert(money))
-                        .addField("Cofre", Currency.convert(balance))
-                        .addField("Total", Currency.convert(networth));
+                        .addField("Inventario", Currency.convert(money), true)
+                        .addField("Cofre", Currency.convert(balance), true)
+                        .addField("Total", Currency.convert(networth), true);
                         msg.channel.send(embed);
 		}
 	}
