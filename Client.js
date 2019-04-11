@@ -2,7 +2,7 @@ const commando = require('discord.js-commando');
 const CommandoClient = require('./estructuras/CommandoClient');
 const client = new CommandoClient({
 	owner: '304354101523906561',
-	commandPrefix: "p.",
+	commandPrefix: "n!",
 	unknownCommandResponse: false,
 	disableEveryone: true
 });
@@ -28,6 +28,7 @@ let gainedXPRecently = [];
 
 client.on('ready', () => {
   console.log("ola")
+  client.user.setGame("con los nehgrozh.")
 })
 	.on('message', async message => {
 		if (message.channel.type === 'dm') return;
@@ -50,12 +51,6 @@ client.on('ready', () => {
 				const index = earnedRecently.indexOf(message.author.id);
 				earnedRecently.splice(index, 1);
 			}, 8000);
-
-			if(message.content === "<:poia:480144912885743628>") {
-				const Poia = require('./poia.json');
-				const randomPokemon = (total) => (Math.random() * total | 0) + 1;
-				message.channel.send(`${Poia[randomPokemon(Poia.length)]}`);
-			};
 		}
 
 		if (!gainedXPRecently.includes(message.author.id)) {
