@@ -1,5 +1,6 @@
 const { Command } = require('discord.js-commando');
 const { oneLine } = require('common-tags');
+const Discord = require("discord.js");
 
 const Bank = require('../../estructuras/dinero/Bank');
 const Currency = require('../../estructuras/dinero/Currency');
@@ -8,11 +9,11 @@ module.exports = class MoneyInfoCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'money',
-			aliases: ['bal', 'balance', 'donut', 'donuts', 'doughnut', 'doughnuts'],
+			aliases: ['bal', 'balance', 'donut', 'donuts', 'doughnut', 'doughnuts','dinero','esmeraldas','coins'],
 			group: 'economy',
 			memberName: 'money',
-			description: `Displays the ${Currency.textPlural} you have earned.`,
-			details: `Displays the ${Currency.textPlural} you have earned.`,
+			description: `Muestra las ${Currency.textPlural} que tienes.`,
+			details: `Muestra las ${Currency.textPlural} que tienes.`,
 			guildOnly: true,
 			throttling: {
 				usages: 2,
@@ -37,21 +38,21 @@ module.exports = class MoneyInfoCommand extends Command {
 		const networth = (money || 0) + balance;
 
 		if (args.member) {
-			if (money === null) return msg.reply(`${member.displayName} hasn't earned any ${Currency.textPlural} yet.`);
-			return msg.reply(oneLine`
-				${member.displayName} has ${Currency.convert(money)} on hand and
-				${Currency.convert(balance)} in the bank.
-				Their net worth is ${Currency.convert(networth)}.
-				Good on them!
-			`);
+			if (money === null) return msg.reply(`${member.displayName} no ha ganado ${Currency.textPlural} todavia.`);
+			return let embed = new Discord.RichEmbed()
+                        .setAuthor(msg.author.username, msg.author.displayAvatarURL)
+                        .addField("Inventario", Currency.convert(money))
+                        .addField("Cofre", Currency.convert(balance))
+                        .addField("Total", Currency.convert(networth));
+                        msg.channel.send(embed);
 		} else {
-			if (money === null) return msg.reply(`you haven't earned any ${Currency.textPlural} yet.`);
-			return msg.reply(oneLine`
-				you have ${Currency.convert(money)} on hand and
-				${Currency.convert(balance)} in the bank.
-				Your net worth is ${Currency.convert(networth)}.
-				Good on you!
-			`);
+			if (money === null) return msg.reply(`todavia no has ganado ${Currency.textPlural}.`);
+			return let embed = new Discord.RichEmbed()
+                        .setAuthor(msg.author.username, msg.author.displayAvatarURL)
+                        .addField("Inventario", Currency.convert(money))
+                        .addField("Cofre", Currency.convert(balance))
+                        .addField("Total", Currency.convert(networth));
+                        msg.channel.send(embed);
 		}
 	}
 };
