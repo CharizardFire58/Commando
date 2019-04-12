@@ -25,16 +25,15 @@ client.setProvider(new SequelizeProvider(client.database));
 let earnedRecently = [];
 let gainedXPRecently = [];
 
-client.on('ready', () => {
-  console.log("ola")
-  client.user.setGame("con los nehgrozh.")
-})
-	
 const events = {
 	MESSAGE_REACTION_ADD: 'messageReactionAdd',
 	MESSAGE_REACTION_REMOVE: 'messageReactionRemove',
 };
 
+client.on('ready', () => {
+  console.log("ola")
+  client.user.setGame("con los nehgrozh.")
+})
 	.on('raw', async event => {
 		if (!events.hasOwnProperty(event.t)) return;
 
