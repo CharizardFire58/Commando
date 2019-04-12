@@ -55,10 +55,24 @@ client.on('ready', () => {
 		client.emit(events[event.t], reaction, user);
 	})
 	.on('messageReactionAdd', (reaction, user) => {
-		console.log(`${user.username} reacted with "${reaction.emoji.name}".`);
+		const logs = reaction.guild.channels.find('name', 'logs');
+		const embed = new Discord.RichEmbed()
+		.setColor("#36393F")
+		.setTitle("Reaccion Agregada")
+		.setAuthor(user.username, user.author.displayAvatarURL)
+		.addField('Reaccion:', reaction.emoji.name, true)
+		.addFIeld('Canal:', reaction.channel, true)
+		logs.send(embed);
 	})
 	.on('messageReactionRemove', (reaction, user) => {
-		console.log(`${user.username} removed their "${reaction.emoji.name}" reaction.`);
+		const logs = reaction.guild.channels.find('name', 'logs');
+		const embed = new Discord.RichEmbed()
+		.setColor("#36393F")
+		.setTitle("Reaccion Removida")
+		.setAuthor(user.username, user.author.displayAvatarURL)
+		.addField('Reaccion:', reaction.emoji.name, true)
+		.addFIeld('Canal:', reaction.channel, true)
+		logs.send(embed);
 	})
 	.on('message', async message => {
 		if (message.channel.type === 'dm') return;
