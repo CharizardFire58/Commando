@@ -25,11 +25,13 @@ client.setProvider(new SequelizeProvider(client.database));
 let earnedRecently = [];
 let gainedXPRecently = [];
 
-
 client.on('ready', () => {
   console.log("ola")
   client.user.setGame("con los nehgrozh.")
 })
+	.on('messageReactionAdd', (reaction, user) => {
+		reaction.channel.send(`${user.username} reacted with "${reaction.emoji.name}".`);
+	})
 	.on('message', async message => {
 		if (message.channel.type === 'dm') return;
 		if (message.author.bot) return;
