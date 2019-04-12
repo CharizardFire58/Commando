@@ -59,7 +59,7 @@ client.on('ready', () => {
 		const embed = new Discord.RichEmbed()
 		.setColor("#36393F")
 		.setTitle("Reaccion Agregada")
-		.setAuthor(user.username, user.author.displayAvatarURL)
+		.setAuthor(user.username, user.displayAvatarURL)
 		.addField('Reaccion:', reaction.emoji.name, true)
 		.addField('Canal:', reaction.channel, true)
 		client.channels.get("545127956624834578").send(embed);
@@ -68,7 +68,7 @@ client.on('ready', () => {
 		const embed = new Discord.RichEmbed()
 		.setColor("#36393F")
 		.setTitle("Reaccion Removida")
-		.setAuthor(user.username, user.author.displayAvatarURL)
+		.setAuthor(user.username, user.displayAvatarURL)
 		.addField('Reaccion:', reaction.emoji.name, true)
 		.addField('Canal:', reaction.channel, true)
 		client.channels.get("545127956624834578").send(embed);
