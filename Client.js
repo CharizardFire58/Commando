@@ -1,4 +1,5 @@
 const commando = require('discord.js-commando');
+const Discord = require('discord.js')
 const CommandoClient = require('./estructuras/CommandoClient');
 const client = new CommandoClient({
 	owner: '304354101523906561',
