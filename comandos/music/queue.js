@@ -5,7 +5,7 @@ module.exports = class EventCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: 'evento',
-			group: 'usuario',
+			group: 'music',
 			memberName: 'evento',
 			description: `Comando para crear eventos`,
 			details: `Comando para crear eventos`,
