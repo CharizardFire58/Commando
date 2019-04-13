@@ -35,7 +35,7 @@ module.exports = class EventCommand extends Command {
 		const collector = lol.createReactionCollector(filter, { time: 18970e3 });
 		collector.on('collect', async reaction => {
 			if (reaction.emoji.name === 'okpixel') {
-				client.channels.get("545128014942437376").send(_user.id + " esta participando.");
+				return client.channels.get("545128014942437376").send(_user.id + " esta participando.");
 			}
-		});
+		})
 };
