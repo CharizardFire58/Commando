@@ -38,4 +38,5 @@ module.exports = class EventCommand extends Command {
 				return client.channels.get("545128014942437376").send(_user.id + " esta participando.");
 			}
 		})
+	}
 };
