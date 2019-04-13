@@ -11,15 +11,15 @@ module.exports = class EventCommand extends Command {
 			details: `Comando para crear eventos`,
 			guildOnly: true,
 			throttling: {
-				usages: 3,
-				duration: 2
+				usages: 2,
+				duration: 3
 			}
+
 			args: [
 				{
 					key: 'id',
 					prompt: 'id del mensaje?\n',
-					type: 'integer',
-					min: 1
+					type: 'integer'
 				}
 			]
 		});
