@@ -1,28 +1,40 @@
 const { Command } = require('discord.js-commando');
-const yt = require('ytdl-core')
+const Discord = require('discord.js');
 
-let queue = require('./queue.json');
-
-module.exports = class MusicPlayCommand extends Command {
+module.exports = class EventCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'queue',
-			group: 'music',
-			memberName: 'queue',
-			description: `add a song`,
-			details: `add a song`,
+			name: 'evento',
+			group: 'usuario',
+			memberName: 'evento',
+			description: `Comando para crear eventos`,
+			details: `Comando para crear eventos`,
 			guildOnly: true,
 			throttling: {
-				usages: 2,
-				duration: 3
+				usages: 3,
+				duration: 2
 			}
+			args: [
+				{
+					key: 'id',
+					prompt: 'id del mensaje?\n',
+					type: 'integer',
+					min: 1
+				}
+			]
 		});
-    }
-    
+	}
+	hasPermission(msg) {
+		return this.client.isOwner(msg.author);
+	}
+
 	async run(msg) {
-        if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with p.add`);
-		let tosend = [];
-		queue[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Requested by: ${song.requester}`);});
-		msg.channel.send(`__**${msg.guild.name}'s Music Queue:**__ Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
-    }
+		var lol = id
+		lol.react("548956503659249668")
+		const filter = (reaction, _user) => (reaction.emoji.name === 'okpixel') && _user.id === message.author.id;
+		const collector = lol.createReactionCollector(filter, { time: 18970e3 });
+		collector.on('collect', async reaction => {
+		if (reaction.emoji.name === 'okpixel') {
+			client.channels.get("545128014942437376").send(_user.id + " esta participando.");
+		}
 };
