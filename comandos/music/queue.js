@@ -29,13 +29,13 @@ module.exports = class EventCommand extends Command {
 	}
 
 	async run(msg, { mensaje }) {
-		let msg2 = client.channels.get("566449611187945472").send(mensaje)
+		let msg2 = msg.guilds.channels.get("566449611187945472").send(mensaje)
 		msg2.react("548956503659249668")
 		const filter = (reaction, _user) => (reaction.emoji.name === 'okpixel') && _user.id === message.author.id;
 		const collector = msg2.createReactionCollector(filter, { time: 18970e3 });
 		collector.on('collect', async reaction => {
 			if (reaction.emoji.name === 'okpixel') {
-				return client.channels.get("545128014942437376").send(_user.id + " esta participando.");
+				return msg.guilds.channels.get("545128014942437376").send(_user.id + " esta participando.");
 			}
 		})
 	}
