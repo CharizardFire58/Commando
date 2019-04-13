@@ -4,9 +4,9 @@ const Discord = require('discord.js');
 module.exports = class EventCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'evento',
+			name: 'queue',
 			group: 'music',
-			memberName: 'evento',
+			memberName: 'queue',
 			description: `Comando para crear eventos`,
 			details: `Comando para crear eventos`,
 			guildOnly: true,
