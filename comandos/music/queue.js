@@ -13,7 +13,7 @@ module.exports = class EventCommand extends Command {
 			throttling: {
 				usages: 2,
 				duration: 3
-			}
+			},
 
 			args: [
 				{
